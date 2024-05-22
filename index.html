@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="Images/icon.png" />
+    <title>Saood Ghare | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Saood Ghare</h1>
+            <nav class="navbar">
+                <div class="menu-icon" onclick="toggleMenu()">
+                    &#9776;
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Social Media Icons -->
+    <div class="socials">
+        <a href="https://www.linkedin.com/in/saood-ghare" target="_blank">
+            <img src="Images/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/saoodghare08" target="_blank">
+            <img src="Images/github.png" alt="GitHub">
+        </a>
+        <a href="https://www.instagram.com/saood.ghare/" target="_blank">
+            <img src="Images/instagram.png" alt="Instagram">
+        </a>
+        <a href="mailto:saoodghare0809@gmail.com" target="_blank">
+            <img src="Images/mail.png" alt="Mail">
+        </a>
+        <!-- Add more social links as needed -->
+    </div>
+
+    <main>
+        <section id="home">
+
+            <img src="Images/Farewell.jpg" alt="Saood Ghare" class="profile-photo" />
+            <h3 style="font-size: 2rem; margin: 0; padding: 0; color: #64ffda">
+                Hi, my name is
+            </h3>
+            <h1 style="font-size: 5rem; margin: 0; padding: 0; color: #cdd6f7">
+                Saood Ghare,
+            </h1>
+            <h2 style="font-size: 4rem; margin: 0; padding: 0; color: #8893b1">
+                a Java Full Stack Developer
+            </h2>
+            <button class="pdf-button" onclick="window.location.href='Files/Resume.pdf'">
+                Check out my CV!
+            </button>
+
+        </section>
+
+        <section id="about">
+            <h1>About Me</h1>
+            <div class="about-content">
+                <div>
+                    <img src="Images/GOA.jpg" alt="Saood Ghare" class="about-photo" />
+                </div>
+                <div id="about-p">
+                    <p>
+                        Hello! I am Saood Ghare, a Mechanical Engineer turned Full Stack
+                        Developer. I am currently enhancing my skills in Java Full Stack
+                        development at QSpider's Vashi.<br><br>
+                        I enjoy creating things that live on the internet. You'll often find me diving deep into
+                        open-source projects, fueled by my passion for collaboration and making tech accessible to
+                        everyone. <br><br>
+                        Whether I'm coding up a storm or brainstorming the next big thing, I'm always excited to connect
+                        with fellow enthusiasts and make magic happen. Let's build something cool together! <br><br>
+                        Here are a few technologies I’ve been working with recently:
+                    <ul class="skills">
+                        <li>Java</li>
+                        <li>Adv. Java</li>
+                        <li>HTML, CSS & JavaScript</li>
+                        <li>ReactJS</li>
+                        <li>Node.js</li>
+                        <li>SQL & NoSQL Databases</li>
+                        <li>C/C++</li>
+                        <li>Python</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h1>Projects</h1>
+                <div class="card-container">
+                    <div class="project-card">
+                        <img src="Images/Screenshot 2024-05-18 223840.png" alt="Spotify(Clone)" class="project-photo">
+                        <div class="project-details">
+                            <h2 class="project-name">Spotify(Clone)</h2>
+                            <p class="project-description">This project involves creating a Spotify-like music player using React. The application will allow users to pick songs from a local directory and play them through a user-friendly interface. The core functionalities will include play/pause buttons, a seek bar, navigation buttons etc. Additionally, the play button will appear on hover over the song items. <br>Visit GitHub for sourcecode.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="Images/Screenshot 2024-05-18 230013.png" alt="TDC" class="project-photo">
+                        <div class="project-details">
+                            <h2 class="project-name">The Diet Cascade</h2>
+                            <p class="project-description"><a href="https://thedietcascade.com/">TheDietCascade.com</a> is a comprehensive online platform dedicated to promoting healthy eating and lifestyle choices. A sleek website designed for a dietitian! Made with Basic Web technologies. A robust and user-friendly platform that supports individuals in making healthier lifestyle choices.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="Images/Screenshot 2024-05-18 232519.png" alt="Movie App" class="project-photo">
+                        <div class="project-details">
+                            <h2 class="project-name">Movie App</h2>
+                            <p class="project-description">
+                                <a href="https://saoodghare08.github.io/Movie_App/">Latest Movie Review App</a>. This JavaScript project utilizes The Movie Database (TMDb) API to create a dynamic webpage for browsing and searching movies. Users can explore a curated collection of movies, each featuring a poster, title, rating, and overview. The webpage includes a search function allowing users to find specific movies by title or keyword. </p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="Images/Screenshot 2024-05-19 001032.png" alt="To-Do List" class="project-photo">
+                        <div class="project-details">
+                            <h2 class="project-name">To-Do List</h2>
+                            <p class="project-description">
+                                <a href="https://saoodghare08.github.io/ToDo-List/">To-Do List</a>. This JavaScript project enables users to manage a list of todos with a simple and intuitive interface. Users can add new todos through a form and mark them as completed by clicking on them. The todos are stored locally using localStorage, ensuring persistence across page reloads. Additionally, users can remove todos by right-clicking on them. The project enhances productivity by providing a streamlined way to organize and track tasks.</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="contact">
+            <h1>Get in Touch</h1>
+            <div class="container">
+                <h1>Contact Me</h1>
+                <form id="contact-form" action="https://script.google.com/macros/s/AKfycbxpWFBPdnLM4AgcLsl6T4zgof1EFcj8LK5i4dvNbZBK6B4rgw4UTuIL9odq9a9Bl4KgyQ/exec" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" id="contact-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Saood Ghare. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
