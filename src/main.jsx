@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/Testing/projects" element={<Project />} />
         <Route path="/Testing/contact" element={<Contact />} />
       </Routes>
-      {location.pathname !== "/contact" && <Socials />}
+      {location.pathname !== "/Testing/contact" && <Socials />}
       <Footer />
     </>
   );

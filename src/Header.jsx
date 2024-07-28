@@ -14,13 +14,13 @@ function Header() {
   // Determine the header text based on the current route
   const getHeaderText = () => {
     switch (location.pathname) {
-      case "/":
+      case "/Testing/":
         return "Home";
-      case "/about":
+      case "/Testing/about":
         return "About Me";
-      case "/projects":
+      case "/Testing/projects":
         return "Projects";
-      case '/contact':
+      case '/Testing/contact':
         return 'Get in Touch';
       default:
         return "My Website";
@@ -45,7 +45,7 @@ function Header() {
         >
           <li>
             <a
-              href="/"
+              href="/Testing/"
               className={`block px-3 py-2 ${
                 isActiveLink("/") ? "text-white" : ""
               }`}
@@ -55,7 +55,7 @@ function Header() {
           </li>
           <li>
             <a
-              href="/about"
+              href="/Testing/about"
               className={`block px-3 py-2 ${
                 isActiveLink("/about") ? "text-white" : ""
               }`}
@@ -65,7 +65,7 @@ function Header() {
           </li>
           <li>
             <a
-              href="/projects"
+              href="/Testing/projects"
               className={`block px-3 py-2 ${
                 isActiveLink("/projects") ? "text-white" : ""
               }`}
@@ -75,7 +75,7 @@ function Header() {
           </li>
           <li>
             <a
-              href="/contact"
+              href="/Testing/contact"
               className={`block px-3 py-2 ${
                 isActiveLink("/contact") ? "text-white" : ""
               }`}
