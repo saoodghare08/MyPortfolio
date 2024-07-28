@@ -22,12 +22,12 @@ const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/Testing/" element={<HomePage />} />
-        <Route path="/Testing/about" element={<About />} />
-        <Route path="/Testing/projects" element={<Project />} />
-        <Route path="/Testing/contact" element={<Contact />} />
+        <Route path="/MyPortfolio/" element={<HomePage />} />
+        <Route path="/MyPortfolio/about" element={<About />} />
+        <Route path="/MyPortfolio/projects" element={<Project />} />
+        <Route path="/MyPortfolio/contact" element={<Contact />} />
       </Routes>
-      {location.pathname !== "/Testing/contact" && <Socials />}
+      {location.pathname !== "/MyPortfolio/contact" && <Socials />}
       <Footer />
     </>
   );
