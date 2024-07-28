@@ -22,10 +22,10 @@ const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Project />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/Testing/" element={<HomePage />} />
+        <Route path="/Testing/about" element={<About />} />
+        <Route path="/Testing/projects" element={<Project />} />
+        <Route path="/Testing/contact" element={<Contact />} />
       </Routes>
       {location.pathname !== "/contact" && <Socials />}
       <Footer />
