@@ -14,7 +14,7 @@ const projects = [
   {
     image: Spotify,
     title: 'Spotify-clone',
-    link:'',
+    link:'https://saoodghare08.github.io/Spotify-clone/',
     description: 'This project involves creating a Spotify-like music player using React. The application will allow users to pick songs from a local directory and play them through a user-friendly interface. The core functionalities will include play/pause buttons, a seek bar, navigation buttons, etc. Additionally, the play button will appear on hover over the song items. Visit GitHub for source code.',
   },
   {
