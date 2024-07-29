@@ -47,7 +47,7 @@ function Header() {
             <a
               href="/MyPortfolio/"
               className={`block px-3 py-2 ${
-                isActiveLink("/") ? "text-white" : ""
+                isActiveLink("/MyPortfolio/") ? "text-white" : ""
               }`}
             >
               Home
@@ -57,7 +57,7 @@ function Header() {
             <a
               href="/MyPortfolio/about"
               className={`block px-3 py-2 ${
-                isActiveLink("/about") ? "text-white" : ""
+                isActiveLink("/MyPortfolio/about") ? "text-white" : ""
               }`}
             >
               About
@@ -67,7 +67,7 @@ function Header() {
             <a
               href="/MyPortfolio/projects"
               className={`block px-3 py-2 ${
-                isActiveLink("/projects") ? "text-white" : ""
+                isActiveLink("/MyPortfolio/projects") ? "text-white" : ""
               }`}
             >
               Projects
@@ -77,7 +77,7 @@ function Header() {
             <a
               href="/MyPortfolio/contact"
               className={`block px-3 py-2 ${
-                isActiveLink("/contact") ? "text-white" : ""
+                isActiveLink("/MyPortfolio/contact") ? "text-white" : ""
               }`}
             >
               Contact
