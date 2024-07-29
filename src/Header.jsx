@@ -57,7 +57,7 @@ function Header() {
             <a
               href="/MyPortfolio/about"
               className={`block px-3 py-2 ${
-                isActiveLink("/about") ? "text-red-700" : ""
+                isActiveLink("/about") ? "text-white" : ""
               }`}
             >
               About

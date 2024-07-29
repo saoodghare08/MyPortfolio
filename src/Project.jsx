@@ -9,12 +9,12 @@ const projects = [
     image: TDC,
     title: 'The Diet Cascade',
     link:'https://thedietcascade.com/',
-    description: 'The Diet Cascade is a comprehensive online platform dedicated to promoting healthy eating and lifestyle choices. A sleek website designed for a dietitian! Made with Basic Web technologies. A robust and user-friendly platform that supports individuals in making healthier lifestyle choices.'
+    description: 'The Diet Cascade is a comprehensive online platform dedicated to promoting healthy eating and lifestyle choices. A sleek website designed for a dietitian! Made with Basic Web technologies. A robust and user-friendly platform that supports individuals in making healthier lifestyle choices.',
   },
   {
     image: Spotify,
     title: 'Spotify-clone',
-    link:'https://saoodghare08.github.io/Spotify-clone/',
+    link: 'https://saoodghare08.github.io/Spotify-clone/',
     description: 'This project involves creating a Spotify-like music player using React. The application will allow users to pick songs from a local directory and play them through a user-friendly interface. The core functionalities will include play/pause buttons, a seek bar, navigation buttons, etc. Additionally, the play button will appear on hover over the song items. Visit GitHub for source code.',
   },
   {
