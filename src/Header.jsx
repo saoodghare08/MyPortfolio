@@ -1,91 +1,88 @@
-import React from "react";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  // Determine the header text based on the current route
-  const getHeaderText = () => {
-    switch (location.pathname) {
-      case "/MyPortfolio/":
-        return "Home";
-      case "/MyPortfolio/about":
-        return "About Me";
-      case "/MyPortfolio/projects":
-        return "Projects";
-      case '/MyPortfolio/contact':
-        return 'Get in Touch';
-      default:
-        return "My Website";
-    }
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-  const isActiveLink = (path) => location.pathname === path;
+  const navLinks = [
+    { name: "Home", to: "home" },
+    { name: "About", to: "about" },
+    { name: "Projects", to: "projects" },
+    { name: "Contact", to: "contact" },
+  ];
 
   return (
-    <div className="bg-background fixed top-0 left-0 w-full z-50 shadow-md">
-      <nav className="flex justify-between items-center text-text mx-10 py-3 relative">
-        <h1 className="text-3xl font-bold">{getHeaderText()}</h1>
-        <div className="lg:hidden">
-          <button onClick={toggleMenu} className="text-3xl">
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-        <ul
-          className={`absolute top-full right-0 w-1/2 bg-background shadow-lg transform transition-transform duration-300 ${
-            isOpen ? "translate-y-0 block pop-out" : "-translate-y-full pop-in"
-          } lg:static lg:transform-none lg:flex lg:space-x-4 lg:w-auto lg:shadow-none`}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-surface/90 backdrop-blur-md border-b border-white/10 shadow-sm" : "bg-transparent py-4"
+        }`}
+    >
+      <div className="container mx-auto px-6 h-16 flex justify-between items-center">
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          className="text-2xl font-bold font-display tracking-wider text-text cursor-pointer"
         >
-          <li>
-            <a
-              href="/MyPortfolio/"
-              className={`block px-3 py-2 ${
-                isActiveLink("/MyPortfolio/") ? "text-white" : ""
-              }`}
+          SG<span className="text-primary">.</span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex space-x-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.to}
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-70}
+              className="text-sm uppercase tracking-widest hover:text-primary transition-colors duration-300 text-muted cursor-pointer"
+              activeClass="!text-primary font-bold"
             >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="/MyPortfolio/about"
-              className={`block px-3 py-2 ${
-                isActiveLink("/MyPortfolio/about") ? "text-white" : ""
-              }`}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="/MyPortfolio/projects"
-              className={`block px-3 py-2 ${
-                isActiveLink("/MyPortfolio/projects") ? "text-white" : ""
-              }`}
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="/MyPortfolio/contact"
-              className={`block px-3 py-2 ${
-                isActiveLink("/MyPortfolio/contact") ? "text-white" : ""
-              }`}
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile Toggle */}
+        <button onClick={toggleMenu} className="lg:hidden text-2xl text-text">
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* Mobile Nav Overlay */}
+      <div
+        className={`fixed inset-0 bg-surface/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 transition-transform duration-500 ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            to={link.to}
+            smooth={true}
+            duration={500}
+            onClick={toggleMenu}
+            className="text-2xl font-display font-bold uppercase tracking-widest text-gray-400 hover:text-primary transition-colors cursor-pointer"
+            activeClass="!text-primary"
+          >
+            {link.name}
+          </Link>
+        ))}
+      </div>
+    </header>
   );
 }
 

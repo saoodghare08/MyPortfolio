@@ -1,85 +1,125 @@
-import React, { useState } from 'react';
-import TDC from './assets/TDC.png';
-import Spotify from './assets/Spotify.png';
-import Todos from './assets/Todos.png';
-import Movie from './assets/MovieApp.png';
-
-const projects = [
-  {
-    image: TDC,
-    title: 'The Diet Cascade',
-    link:'https://thedietcascade.com/',
-    description: 'The Diet Cascade is a comprehensive online platform dedicated to promoting healthy eating and lifestyle choices. A sleek website designed for a dietitian! Made with Basic Web technologies. A robust and user-friendly platform that supports individuals in making healthier lifestyle choices.',
-  },
-  {
-    image: Spotify,
-    title: 'Spotify-clone',
-    link: 'https://saoodghare08.github.io/Spotify-clone/',
-    description: 'This project involves creating a Spotify-like music player using React. The application will allow users to pick songs from a local directory and play them through a user-friendly interface. The core functionalities will include play/pause buttons, a seek bar, navigation buttons, etc. Additionally, the play button will appear on hover over the song items. Visit GitHub for source code.',
-  },
-  {
-    image: Movie,
-    title: 'Movie App',
-    link:'https://saoodghare08.github.io/Movie_App/',
-    description: 'Latest Movie Review App. This JavaScript project utilizes The Movie Database (TMDb) API to create a dynamic webpage for browsing and searching movies. Users can explore a curated collection of movies, each featuring a poster, title, rating, and overview. The webpage includes a search function allowing users to find specific movies by title or keyword.',
-  },
-  {
-    image: Todos,
-    title: 'Todo List',
-    link: 'https://saoodghare08.github.io/ToDo-List/',
-    description: 'To-Do List. This JavaScript project enables users to manage a list of todos with a simple and intuitive interface. Users can add new todos through a form and mark them as completed by clicking on them. The todos are stored locally using localStorage, ensuring persistence across page reloads. Additionally, users can remove todos by right-clicking on them. The project enhances productivity by providing a streamlined way to organize and track tasks.',
-  },
-];
+import React from 'react';
+import data from './assets/data.json';
+import images from './utils/imageMapper';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 function Project() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? projects.length - 1 : prevIndex - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === projects.length - 1 ? 0 : prevIndex + 1));
-  };
-
-  const getProjectClass = (index) => {
-    if (index === currentIndex) return 'scale-100 z-10';
-    if (index === (currentIndex - 1 + projects.length) % projects.length) return 'scale-75 -translate-x-24 lg:-translate-x-64 z-0';
-    if (index === (currentIndex + 1) % projects.length) return 'scale-75 translate-x-24 lg:translate-x-64 z-0';
-    return 'hidden';
-  };
+  const { projects } = data;
 
   return (
-    <div className="relative bg-background min-h-screen px-16 flex justify-center items-center overflow-hidden">
-      <button 
-        className="absolute left-5 lg:left-48 p-4 bg-gray-600 text-white  rounded-full hover:bg-gray-800 transition z-20" 
-        onClick={prevSlide}
-      >
-        &larr;
-      </button>
-      <div className="relative w-full flex justify-center items-center">
-        {projects.map((project, index) => (
+    <div className="bg-surface relative pb-20">
+
+      {/* UNIFIED VIEW: Vertical Sticky Stack */}
+      <section className="min-h-screen">
+        <div className="container mx-auto px-6 pt-20 mb-10 md:mb-20">
+          <h2 className="text-5xl md:text-8xl font-display font-black text-text mb-4">
+            SELECTED <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">WORKS</span>
+          </h2>
+          <p className="text-lg md:text-xl text-muted max-w-xl">
+            A collection of projects exploring performance, interaction, and design.
+            Scroll down to explore the stack.
+          </p>
+        </div>
+
+        <div className="container mx-auto px-4 md:px-6 relative pb-[50vh]">
+          {projects.map((project, index) => (
+            <StickyCard key={index} project={project} index={index} total={projects.length} />
+          ))}
+
+          {/* GitHub CTA Card - The Final Card in the Stack */}
           <div
-            key={index}
-            className={`absolute transition-transform duration-500 ease-in-out transform ${getProjectClass(index)} max-w-md mx-auto bg-cardBg shadow-md rounded-md text-center`}
+            className="sticky w-full mb-20 group z-50 flex items-center justify-center p-4 md:p-8"
+            style={{ top: `${150 + projects.length * 20}px` }}
           >
-            <img src={project.image} alt={project.title} className="p-3 rounded-md w-full h-64 object-cover" />
-            <div className="p-6">
-              <h2 className="text-4xl text-gray-300">{project.title}</h2>
-              <p className="text-gray-400">{project.description}</p>
-              <p className="text-gray-400">Click <a className='text-text' href={project.link}>here</a> to check it out!</p>
+            <div className="relative w-full max-w-4xl h-[40vh] md:h-[50vh] bg-gradient-to-br from-primary to-secondary rounded-[2rem] md:rounded-[3rem] shadow-2xl flex flex-col items-center justify-center text-center p-8 border border-white/20 overflow-hidden">
+              {/* Background Decor */}
+              <FaGithub className="absolute text-[20rem] text-white/10 -bottom-20 -right-20 rotate-12" />
+
+              <h3 className="text-3xl md:text-6xl font-display font-black text-white mb-6 relative z-10">
+                More on GitHub
+              </h3>
+              <p className="text-white/90 text-lg mb-8 max-w-md relative z-10">
+                Check out my repositories for experimental code, tweaks, and open source contributions.
+              </p>
+              <a
+                href="https://github.com/saoodghare08"
+                target="_blank"
+                rel="noreferrer"
+                className="px-10 py-4 bg-white text-primary font-bold text-xl uppercase tracking-widest rounded-full hover:scale-105 hover:shadow-xl transition-transform relative z-10"
+              >
+                View Profile
+              </a>
             </div>
           </div>
-        ))}
-      </div>
-      <button 
-        className="absolute right-5 lg:right-48 p-4 bg-gray-600 text-white rounded-full hover:bg-gray-800 transition z-20" 
-        onClick={nextSlide}
-      >
-        &rarr;
-      </button>
+
+        </div>
+      </section>
+
     </div>
   );
 }
+
+const StickyCard = ({ project, index }) => {
+  // Mobile tends to have less vertical space, so we use a tighter packing.
+  // Base offset 100px (header room) + index * 20px (stacking)
+  // Using 'calc' or conditional logic isn't strictly necessary if we pick a safe middle ground.
+  const topOffset = 120 + index * 20;
+
+  return (
+    <div
+      className="sticky w-full mb-12 md:mb-20 group"
+      style={{ top: `${topOffset}px`, zIndex: index + 1 }}
+    >
+      <div className="relative h-[60vh] md:h-[80vh] w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 bg-background shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:scale-[1.02] origin-top">
+
+        {/* Split Layout: Image & Text */}
+        <div className="flex flex-col-reverse lg:flex-row h-full">
+
+          {/* Content Side */}
+          <div className="lg:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-between bg-surface/95 backdrop-blur-md relative z-10 h-1/2 lg:h-full">
+            <div className="overflow-y-auto no-scrollbar">
+              <span className="text-6xl md:text-9xl font-black text-text/5 absolute top-4 left-4 -z-10 select-none">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h3 className="text-3xl md:text-5xl font-display font-black text-text mb-2 md:mb-6 mt-2 md:mt-10 leading-tight">
+                {project.title}
+              </h3>
+              <p className="text-sm md:text-xl text-muted leading-relaxed mb-4 md:mb-8 line-clamp-4 md:line-clamp-none">
+                {project.description}
+              </p>
+              <div className="hidden md:flex gap-2 mb-8">
+                <span className="px-3 py-1 border border-white/10 rounded-full text-xs text-muted">React</span>
+                <span className="px-3 py-1 border border-white/10 rounded-full text-xs text-muted">Tailwind</span>
+              </div>
+            </div>
+
+            <div className="flex gap-4 mt-4 lg:mt-0">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full lg:w-auto flex items-center justify-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-primary text-white font-bold uppercase tracking-wider rounded-full hover:bg-secondary transition-all hover:scale-105 shadow-lg shadow-primary/20 text-sm md:text-base"
+              >
+                <FaExternalLinkAlt /> Live Demo
+              </a>
+            </div>
+          </div>
+
+          {/* Image Side */}
+          <div className="lg:w-1/2 relative overflow-hidden h-1/2 lg:h-full group-hover:cursor-pointer">
+            <img
+              src={images[project.imageKey]}
+              alt={project.title}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lg:grayscale lg:group-hover:grayscale-0"
+            />
+            {/* Gradient overlay for mobile readability if needed */}
+            <div className="absolute inset-0 bg-gradient-to-t from-surface/50 to-transparent lg:hidden" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Project;

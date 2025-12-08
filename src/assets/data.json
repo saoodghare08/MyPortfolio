@@ -1,0 +1,79 @@
+{
+    "profile": {
+        "name": "Muhammad Saood Ghare",
+        "role": "Full Stack Web Developer",
+        "intro": [
+            "Full Stack Developer with a Mechanical Engineering background, leveraging analytical problem-solving skills to build scalable web applications. Specialized in Next.js, React, and Laravel, with a focus on high-performance e-commerce solutions and complex API integrations.",
+            "Currently working as a Full Stack Developer at Ahmed Al Maghribi Perfumes in Ajman, UAE, where I orchestrate cloud deployments, integrate payment gateways like Tabby/Tamara, and architect cross-device cart systems.",
+            "Previously at AutomateBuddy Technologies, I specialized in building enterprise-grade interfaces with React.js and Redux Toolkit, and developed secure backend systems using .NET Core and PostgreSQL.",
+            "I enjoy translating business requirements into optimized, user-centric code. Whether architecting a 'K-Series' launch page with GSAP animations or optimizing server performance for 99.9% uptime, I am driven by impact and efficiency."
+        ],
+        "skills": [
+            "JavaScript (ES6+)",
+            "React.js & Next.js",
+            "Node.js & Laravel",
+            "Spring Boot & .NET Core",
+            "SQL (MySQL, PostgreSQL)",
+            "Tailwind CSS & GSAP",
+            "Redux Toolkit",
+            "Git & DevOps",
+            "Java & C#",
+            "Power BI"
+        ],
+        "contactMessage": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Connect with me on my social platforms or drop me an email."
+    },
+    "socials": [
+        {
+            "platform": "LinkedIn",
+            "url": "https://www.linkedin.com/in/saood-ghare",
+            "color": "#0077b5"
+        },
+        {
+            "platform": "GitHub",
+            "url": "https://github.com/saoodghare08",
+            "color": "#333"
+        },
+        {
+            "platform": "Instagram",
+            "url": "https://www.instagram.com/saood.ghare/",
+            "color": "#E1306C"
+        },
+        {
+            "platform": "Email",
+            "url": "mailto:saoodaslam4@gmail.com",
+            "color": "#D44638"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Ahmed Al Maghribi",
+            "link": "https://ae.ahmedalmaghribi.com/en",
+            "description": "Orchestrated deployment workflows on Cloudways ensuring 99.9% uptime. Integrated Frontline Express delivery and Tabby/Tamara payments. Engineered a Cross-Device Cart System and redesigned Product Detail Pages for 1000+ SKUs.",
+            "imageKey": "TDC"
+        },
+        {
+            "title": "The Diet Cascade",
+            "link": "https://thedietcascade.com/",
+            "description": "A comprehensive online platform dedicated to promoting healthy eating. Achieved 100% Google Lighthouse performance scores. Managed end-to-end deployment pipelines using cPanel and Hostinger.",
+            "imageKey": "TDC"
+        },
+        {
+            "title": "Procon Media",
+            "link": "https://proconmedia.in/",
+            "description": "Website for Procon Media",
+            "imageKey": "Procon"
+        },
+        {
+            "title": "Bullion Stock Trading",
+            "link": "https://bullion-iota.vercel.app/",
+            "description": "Developed a stock trading simulation platform featuring complex business logic for automated tax calculations and brokerage fees. Built a dual-interface system (User vs. Admin) with a graphical dashboard for real-time analytics.",
+            "imageKey": "Todos"
+        },
+        {
+            "title": "AB Commerce",
+            "link": "https://ab-commerce.vercel.app/",
+            "description": "E-Commerce Website for practice",
+            "imageKey": "Todos"
+        }
+    ]
+}

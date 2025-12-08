@@ -1,105 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fadeInOut {
-  0%,
-  100% {
-    opacity: 0;
+@layer base {
+  :root {
+    /* Default to Midnight Purple until context loads */
+    --color-background: 15 7 32;
+    --color-surface: 30 27 75;
+    --color-primary: 168 85 247;
+    --color-secondary: 236 72 153;
+    --color-accent: 34 211 238;
+    --color-text: 243 232 255;
+    --color-muted: 148 163 184;
   }
-  50% {
-    opacity: 1;
+
+  body {
+    @apply bg-background text-text font-sans antialiased overflow-x-hidden transition-colors duration-500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Outfit', sans-serif;
   }
 }
 
-.animate-fade-in-out {
-  animation: fadeInOut 1.6s ease-in-out;
+.glass-panel {
+  @apply bg-surface/50 backdrop-blur-lg border border-white/10 shadow-xl;
 }
 
-@keyframes spinClockwise {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.spin-clockwise {
-  animation: spinClockwise 0.45s linear;
+.neon-text {
+  text-shadow: 0 0 10px rgb(var(--color-primary) / 0.5);
 }
 
-@keyframes spinCounterClockwise {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-.spin-counterclockwise {
-  animation: spinCounterClockwise 0.45s linear;
-}
-@media (max-width: 768px) {
-  @keyframes slideIn {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-      display: none;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  .slide-in {
-    animation: slideIn 0.5s ease forwards;
-  }
-
-  @keyframes slideOut {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(-100%);
-      opacity: 0;
-      display: none;
-    }
-  }
-
-  .slide-out {
-    animation: slideOut 0.5s ease forwards;
-  }
-
-
-@keyframes popOut {
-  0% {
-    transform: translate(100%, -100%) scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes popIn {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(100%, -100%) scale(0);
-    opacity: 0;
-    display: none;
-  }
-}
-
-.pop-out {
-  animation: popOut 0.5s ease forwards;
-}
-
-.pop-in {
-  animation: popIn 0.5s ease forwards;
-}
+.gradient-text {
+  background: linear-gradient(to right, rgb(var(--color-primary)), rgb(var(--color-secondary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
