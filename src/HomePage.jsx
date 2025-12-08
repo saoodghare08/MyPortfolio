@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-scroll";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import data from "./assets/data.json";
 import images from "./utils/imageMapper";
@@ -82,12 +83,23 @@ function HomePage() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <button className="px-8 py-4 bg-text text-background font-bold uppercase tracking-widest rounded-full hover:scale-105 hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300">
+            <Link
+              to="projects"
+              smooth={true}
+              duration={800}
+              offset={-50}
+              className="px-8 py-4 bg-text text-background font-bold uppercase tracking-widest rounded-full hover:scale-105 hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 cursor-pointer text-center"
+            >
               View My Work
-            </button>
-            <button className="px-8 py-4 border border-text/30 text-text font-bold uppercase tracking-widest rounded-full hover:bg-text hover:text-background transition-all duration-300">
+            </Link>
+            <Link
+              to="contact"
+              smooth={true}
+              duration={800}
+              className="px-8 py-4 border border-text/30 text-text font-bold uppercase tracking-widest rounded-full hover:bg-text hover:text-background transition-all duration-300 cursor-pointer text-center"
+            >
               Contact Me
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
 

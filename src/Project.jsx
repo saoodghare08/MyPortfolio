@@ -13,7 +13,7 @@ function Project() {
       <section className="min-h-screen">
         <div className="container mx-auto px-6 pt-20 mb-10 md:mb-20">
           <h2 className="text-5xl md:text-8xl font-display font-black text-text mb-4">
-            SELECTED <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">WORKS</span>
+            FEATURED <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">WORK</span>
           </h2>
           <p className="text-lg md:text-xl text-muted max-w-xl">
             A collection of projects exploring performance, interaction, and design.

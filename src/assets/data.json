@@ -1,6 +1,6 @@
 {
     "profile": {
-        "name": "Muhammad Saood Ghare",
+        "name": "Saood Ghare",
         "role": "Full Stack Web Developer",
         "intro": [
             "Full Stack Developer with a Mechanical Engineering background, leveraging analytical problem-solving skills to build scalable web applications. Specialized in Next.js, React, and Laravel, with a focus on high-performance e-commerce solutions and complex API integrations.",
@@ -48,32 +48,20 @@
         {
             "title": "Ahmed Al Maghribi",
             "link": "https://ae.ahmedalmaghribi.com/en",
-            "description": "Orchestrated deployment workflows on Cloudways ensuring 99.9% uptime. Integrated Frontline Express delivery and Tabby/Tamara payments. Engineered a Cross-Device Cart System and redesigned Product Detail Pages for 1000+ SKUs.",
-            "imageKey": "TDC"
+            "description": "Architected a multi-region headless e-commerce platform managing 6 country codebases. Engineered a persistent cross-device cart system, integrated fintech APIs (Tabby/Tamara), and built high-performance landing pages using Next.js 14 and GSAP animations.",
+            "imageKey": "Awfa"
         },
         {
             "title": "The Diet Cascade",
             "link": "https://thedietcascade.com/",
-            "description": "A comprehensive online platform dedicated to promoting healthy eating. Achieved 100% Google Lighthouse performance scores. Managed end-to-end deployment pipelines using cPanel and Hostinger.",
+            "description": "Delivered a high-performance custom web solution for the healthcare sector. Achieved 100% Google Lighthouse scores for Performance and SEO by optimizing asset loading and server response times on Hostinger.",
             "imageKey": "TDC"
         },
         {
             "title": "Procon Media",
             "link": "https://proconmedia.in/",
-            "description": "Website for Procon Media",
+            "description": "Developed a fully responsive digital agency interface using Tailwind CSS. Optimized the deployment pipeline via cPanel to ensure SSL compliance, fast rendering, and maximum search engine visibility for lead generation.",
             "imageKey": "Procon"
-        },
-        {
-            "title": "Bullion Stock Trading",
-            "link": "https://bullion-iota.vercel.app/",
-            "description": "Developed a stock trading simulation platform featuring complex business logic for automated tax calculations and brokerage fees. Built a dual-interface system (User vs. Admin) with a graphical dashboard for real-time analytics.",
-            "imageKey": "Todos"
-        },
-        {
-            "title": "AB Commerce",
-            "link": "https://ab-commerce.vercel.app/",
-            "description": "E-Commerce Website for practice",
-            "imageKey": "Todos"
         }
     ]
 }
