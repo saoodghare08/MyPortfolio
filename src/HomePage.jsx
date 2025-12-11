@@ -40,7 +40,7 @@ function HomePage() {
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-float" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-secondary/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
 
-      <div className="container mx-auto px-6 z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="container mx-auto px-6 z-10 flex flex-col lg:flex-row items-center justify-between gap-12 mt-16">
 
         {/* Parallax Text Content */}
         <motion.div

@@ -1,27 +1,48 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="src/assets/icon.png" />
-    <script type="text/javascript">
-      (function (l) {
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-        }
-      })(window.location);
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="src/assets/icon.png" />
+  <script type="text/javascript">
+    (function (l) {
+      if (l.search[1] === "/") {
+        var decoded = l.search
+          .slice(1)
+          .split("&")
+          .map(function (s) {
+            return s.replace(/~and~/g, "&");
+          })
+          .join("?");
+        window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+      }
+    })(window.location);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saood Ghare | Full Stack Web Developer</title>
+  <meta name="description"
+    content="Full Stack Developer specialized in Next.js, React, and Laravel. Building scalable web applications with a focus on high-performance and design." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://saoodghare08.github.io/MyPortfolio/" />
+  <meta property="og:title" content="Saood Ghare | Full Stack Web Developer" />
+  <meta property="og:description"
+    content="Full Stack Developer specialized in Next.js, React, and Laravel. Building scalable web applications with a focus on high-performance and design." />
+  <meta property="og:image" content="/src/assets/preview.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://saoodghare08.github.io/MyPortfolio/" />
+  <meta property="twitter:title" content="Saood Ghare | Full Stack Web Developer" />
+  <meta property="twitter:description"
+    content="Full Stack Developer specialized in Next.js, React, and Laravel. Building scalable web applications with a focus on high-performance and design." />
+  <meta property="twitter:image" content="/src/assets/preview.png" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

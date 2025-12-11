@@ -10,6 +10,7 @@ import Contact from "./Contact";
 import { ThemeProvider } from "./context/ThemeContext";
 
 import ScrollProgress from "./components/ScrollProgress";
+import CustomCursor from "./components/CustomCursor";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
+      <CustomCursor />
       <App />
     </ThemeProvider>
   </React.StrictMode>

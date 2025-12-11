@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Swal from 'sweetalert2';
+
 import { FaGithub, FaInstagram, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import data from './assets/data.json';
 import MagneticButton from './components/MagneticButton';
@@ -66,30 +66,9 @@ function Contact() {
           transition={{ delay: 0.5 }}
           className="mt-24 w-full flex justify-center"
         >
-          <MagneticButton
-            className="px-10 py-5 bg-text text-background text-xl font-bold uppercase tracking-widest rounded-full hover:scale-105 transition-transform active:scale-95 flex items-center gap-3"
-            onClick={() => {
-              const emailSocial = socials.find(s => s.platform === 'Email');
-              if (emailSocial) {
-                const email = emailSocial.url.replace('mailto:', '');
-                navigator.clipboard.writeText(email);
-
-                Swal.fire({
-                  title: 'Email Copied!',
-                  text: 'Ready to paste.',
-                  icon: 'success',
-                  confirmButtonColor: 'rgb(var(--color-primary))',
-                  background: 'rgb(var(--color-surface))',
-                  color: 'rgb(var(--color-text))',
-                  timer: 2000,
-                  timerProgressBar: true,
-                  showConfirmButton: false
-                });
-              }
-            }}
-          >
+          <div className="px-10 py-5 text-4xl md:text-5xl font-black uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-lg select-none">
             Get in touch
-          </MagneticButton>
+          </div>
         </motion.div>
       </div>
     </section>
