@@ -62,7 +62,7 @@ function Contact() {
           className="text-center"
         >
           <h2 className="text-6xl md:text-8xl font-display font-black text-text mb-8">
-            Start a <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">project</span>
+            Let's Work <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Together</span>
           </h2>
           <p className="text-xl md:text-2xl text-muted max-w-2xl mx-auto mb-16 leading-relaxed">
             {profile.contactMessage}
@@ -192,7 +192,7 @@ function Contact() {
           className="mt-24 w-full flex justify-center"
         >
           <div className="px-4 md:px-10 py-5 text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-wider md:tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-lg select-none text-center">
-            Get in touch
+            Let's connect
           </div>
         </motion.div>
       </div>
