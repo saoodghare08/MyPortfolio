@@ -5,6 +5,8 @@ import Movie from '../assets/MovieApp.png';
 import Farewell from '../assets/Farewell.jpg';
 import Awfa from '../assets/awfa.jpg';
 import Procon from '../assets/procon.png';
+import SoberEstate from '../assets/SoberEstate.png';
+import CityPrime from '../assets/CityPrime.png';
 
 const images = {
     TDC,
@@ -13,7 +15,9 @@ const images = {
     Movie,
     Farewell,
     Awfa,
-    Procon
+    Procon,
+    SoberEstate,
+    CityPrime
 };
 
 export default images;

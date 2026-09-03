@@ -87,9 +87,10 @@ const StickyCard = ({ project, index }) => {
               <p className="text-sm md:text-xl text-muted leading-relaxed mb-4 md:mb-8 line-clamp-4 md:line-clamp-none">
                 {project.description}
               </p>
-              <div className="hidden md:flex gap-2 mb-8">
-                <span className="px-3 py-1 border border-white/10 rounded-full text-xs text-muted">React</span>
-                <span className="px-3 py-1 border border-white/10 rounded-full text-xs text-muted">Tailwind</span>
+              <div className="hidden md:flex flex-wrap gap-2 mb-8">
+                {(project.tags || []).map((tag) => (
+                  <span key={tag} className="px-3 py-1 border border-white/10 rounded-full text-xs text-muted">{tag}</span>
+                ))}
               </div>
             </div>
 
@@ -111,6 +112,7 @@ const StickyCard = ({ project, index }) => {
               src={images[project.imageKey]}
               alt={project.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lg:grayscale lg:group-hover:grayscale-0"
+              loading="lazy"
             />
             {/* Gradient overlay for mobile readability if needed */}
             <div className="absolute inset-0 bg-gradient-to-t from-surface/50 to-transparent lg:hidden" />

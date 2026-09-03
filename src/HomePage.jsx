@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import { Link } from "react-scroll";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import data from "./assets/data.json";
 import images from "./utils/imageMapper";
+import { FaChevronDown } from "react-icons/fa";
 
 function HomePage() {
   const { profile } = data;
@@ -18,13 +19,13 @@ function HomePage() {
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  // Mouse Move Tilt Effect Setup
+  // Mouse Move Tilt Effect
   const handleMouseMove = (e) => {
     const { clientX, clientY, currentTarget } = e;
     const { width, height, left, top } = currentTarget.getBoundingClientRect();
     const x = clientX - left;
     const y = clientY - top;
-    const rotateX = (y / height - 0.5) * 20; // Max 20deg rotation
+    const rotateX = (y / height - 0.5) * 20;
     const rotateY = (x / width - 0.5) * -20;
 
     currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
@@ -63,7 +64,13 @@ function HomePage() {
             className="text-6xl lg:text-9xl font-display font-black text-text mb-6 leading-[0.9] tracking-tight"
           >
             HELLO <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
+            <span
+              className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent"
+              style={{
+                WebkitTextStroke: '1px rgb(var(--color-primary) / 0.3)',
+                filter: 'drop-shadow(0 0 30px rgb(var(--color-primary) / 0.2))'
+              }}
+            >
               I'M {profile.name.split(' ')[0].toUpperCase()}
             </span>
           </motion.h1>

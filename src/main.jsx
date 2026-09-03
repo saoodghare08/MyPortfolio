@@ -11,6 +11,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 
 import ScrollProgress from "./components/ScrollProgress";
 import CustomCursor from "./components/CustomCursor";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
       <CustomCursor />
+      <ThemeSwitcher />
       <App />
     </ThemeProvider>
   </React.StrictMode>

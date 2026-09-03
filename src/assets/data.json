@@ -2,12 +2,14 @@
     "profile": {
         "name": "Saood Ghare",
         "role": "Full Stack Web Developer",
+        "bio": "I build scalable, high-performance web applications with Next.js, React, and Laravel — turning complex business requirements into elegant digital experiences.",
         "intro": [
-            "Full Stack Developer with a Mechanical Engineering background, leveraging analytical problem-solving skills to build scalable web applications. Specialized in Next.js, React, and Laravel, with a focus on high-performance e-commerce solutions and complex API integrations.",
-            "Currently working as a Full Stack Developer at Ahmed Al Maghribi Perfumes in Ajman, UAE, where I orchestrate cloud deployments, integrate payment gateways like Tabby/Tamara, and architect cross-device cart systems.",
-            "Previously at AutomateBuddy Technologies, I specialized in building enterprise-grade interfaces with React.js and Redux Toolkit, and developed secure backend systems using .NET Core and PostgreSQL.",
-            "I enjoy translating business requirements into optimized, user-centric code. Whether architecting a 'K-Series' launch page with GSAP animations or optimizing server performance for 99.9% uptime, I am driven by impact and efficiency."
+            "Full Stack Developer with a Mechanical Engineering background and 2.5+ years of experience building scalable web applications and e-commerce platforms. Specialized in React, Next.js, Node.js, Laravel, and cloud technologies, with a strong focus on performance, security, and API-driven architectures.",
+            "Currently working as a Full Stack Developer at Ahmed Al Maghribi Perfumes in Ajman, UAE, where I develop and maintain high-traffic e-commerce platforms, build complex API integrations, implement payment solutions including Tabby, Tamara, PayTabs, and PayFort, and work with AWS and Cloudways infrastructure.",
+            "Previously at AutomateBuddy Technologies, I worked extensively with React.js, Redux Toolkit, .NET Core, and PostgreSQL, building responsive enterprise interfaces and backend APIs while focusing on maintainability, security, and reliable data management.",
+            "I enjoy turning complex business requirements into reliable, scalable solutions. From developing localized e-commerce experiences and cross-device cart systems to optimizing APIs, databases, and server performance, I focus on building products that are fast, secure, and practical."
         ],
+        "quote": "Passionate about creating digital experiences that bridge the gap between aesthetics and functionality.",
         "skills": [
             "JavaScript (ES6+)",
             "React.js & Next.js",
@@ -17,7 +19,7 @@
             "Tailwind CSS & GSAP",
             "Redux Toolkit",
             "Git & DevOps",
-            "Java & C#",
+            "Java, C# & Laravel PHP",
             "Power BI"
         ],
         "contactMessage": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Connect with me on my social platforms or drop me an email."
@@ -49,19 +51,63 @@
             "title": "Ahmed Al Maghribi",
             "link": "https://ae.ahmedalmaghribi.com/en",
             "description": "Architected a multi-region headless e-commerce platform managing 6 country codebases. Engineered a persistent cross-device cart system, integrated fintech APIs (Tabby/Tamara), and built high-performance landing pages using Next.js 14 and GSAP animations.",
-            "imageKey": "Awfa"
+            "imageKey": "Awfa",
+            "tags": [
+                "Next.js 14",
+                "GSAP",
+                "Headless CMS",
+                "Tabby/Tamara"
+            ]
         },
         {
             "title": "The Diet Cascade",
             "link": "https://thedietcascade.com/",
             "description": "Delivered a high-performance custom web solution for the healthcare sector. Achieved 100% Google Lighthouse scores for Performance and SEO by optimizing asset loading and server response times on Hostinger.",
-            "imageKey": "TDC"
+            "imageKey": "TDC",
+            "tags": [
+                "HTML/CSS",
+                "JavaScript",
+                "SEO",
+                "Hostinger"
+            ]
+        },
+        {
+            "title": "Sober Estate",
+            "link": "https://soberestate.net/",
+            "description": "A responsive real estate web platform developed with a focus on modern UI, property listings, search and filtering, project showcases, and lead-generation functionality. Built with scalable frontend architecture and API-driven functionality to deliver a fast and user-friendly experience across devices.",
+            "imageKey": "SoberEstate",
+            "tags": [
+                "HTML/CSS",
+                "JavaScript",
+                "WordPress",
+                "SEO",
+                "Hostinger"
+            ]
+        },
+        {
+            "title": "City Prime Group",
+            "link": "https://cityprime.group/",
+            "description": "A modern corporate web platform developed for a diversified business group operating across real estate, hospitality, infrastructure development, and telecommunications. Built with a responsive interface, structured business-sector pages, project showcases, service sections, and lead-generation functionality, with a focus on performance, scalability, and a professional digital presence.",
+            "imageKey": "CityPrime",
+            "tags": [
+                "HTML/CSS",
+                "JavaScript",
+                "WordPress",
+                "SEO",
+                "Hostinger"
+            ]
         },
         {
             "title": "Procon Media",
             "link": "https://proconmedia.in/",
             "description": "Developed a fully responsive digital agency interface using Tailwind CSS. Optimized the deployment pipeline via cPanel to ensure SSL compliance, fast rendering, and maximum search engine visibility for lead generation.",
-            "imageKey": "Procon"
+            "imageKey": "Procon",
+            "tags": [
+                "Tailwind CSS",
+                "Responsive",
+                "cPanel",
+                "SEO"
+            ]
         }
     ]
 }

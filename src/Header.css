@@ -1,4 +1,4 @@
-/* Navbar Styles Adapted for React + Dynamic Theme */
+/* Navbar Styles — Circular Reveal with Staggered Link Animation */
 
 .nv_wrapper {
     position: fixed;
@@ -12,19 +12,21 @@
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
     z-index: 9919;
+    -webkit-clip-path: circle(25px at calc(100% - 45px) 45px);
     clip-path: circle(25px at calc(100% - 45px) 45px);
-    transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-    /* Smoother easing */
+    transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.175, 1),
+                -webkit-clip-path 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    will-change: clip-path;
     pointer-events: none;
-    /* Let clicks pass through when closed */
 }
 
 .nv_wrapper.active {
+    -webkit-clip-path: circle(150% at calc(100% - 45px) 45px);
     clip-path: circle(150% at calc(100% - 45px) 45px);
-    /* Expand fully */
     pointer-events: all;
 }
 
+/* ---- Hamburger Button ---- */
 .nv_menu-btn {
     position: fixed;
     z-index: 10000;
@@ -32,21 +34,23 @@
     top: 20px;
     height: 50px;
     width: 50px;
-    text-align: center;
-    line-height: 50px;
     border-radius: 50%;
     font-size: 20px;
     color: rgb(var(--color-text));
     cursor: pointer;
     background: transparent;
-    /* Or bg-surface/50 for contrast if needed */
-    transition: all 0.3s ease-in-out;
+    border: none;
+    transition: transform 0.3s ease, color 0.3s ease;
     display: flex;
-    /* Flexbox for centering icon */
     align-items: center;
     justify-content: center;
 }
 
+.nv_menu-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ---- Nav Link List ---- */
 .nv_wrapper ul {
     position: absolute;
     top: 50%;
@@ -58,45 +62,35 @@
     width: 100%;
 }
 
+/* Staggered reveal using a single CSS variable per child.
+   Avoids repetitive nth-child rules and supports any number of links. */
 .nv_wrapper ul li {
     margin: 20px 0;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.3s ease;
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    /* Close animation — reverse stagger: last link hides first */
+    transition-delay: calc(0.05s * (var(--total-links, 4) - var(--i, 0)));
 }
 
-/* Staggered animation when active */
+/* Assign index to each child */
+.nv_wrapper ul li:nth-child(1) { --i: 0; }
+.nv_wrapper ul li:nth-child(2) { --i: 1; }
+.nv_wrapper ul li:nth-child(3) { --i: 2; }
+.nv_wrapper ul li:nth-child(4) { --i: 3; }
+.nv_wrapper ul li:nth-child(5) { --i: 4; }
+.nv_wrapper ul li:nth-child(6) { --i: 5; }
+
 .nv_wrapper.active ul li {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.2s;
-    /* Base delay */
+    /* Open animation — top-to-bottom stagger */
+    transition-delay: calc(0.2s + 0.1s * var(--i, 0));
 }
 
-.nv_wrapper.active ul li:nth-child(1) {
-    transition-delay: 0.2s;
-}
-
-.nv_wrapper.active ul li:nth-child(2) {
-    transition-delay: 0.3s;
-}
-
-.nv_wrapper.active ul li:nth-child(3) {
-    transition-delay: 0.4s;
-}
-
-.nv_wrapper.active ul li:nth-child(4) {
-    transition-delay: 0.5s;
-}
-
-.nv_wrapper.active ul li:nth-child(5) {
-    transition-delay: 0.6s;
-}
-
-.nv_wrapper.active ul li:nth-child(6) {
-    transition-delay: 0.7s;
-}
-
+/* ---- Link Styling ---- */
 .nv_wrapper ul li a {
     text-decoration: none;
     font-size: 30px;
@@ -105,14 +99,13 @@
     color: rgb(var(--color-text));
     position: relative;
     line-height: 50px;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: color 0.4s ease, letter-spacing 0.4s ease, background 0.4s ease;
     font-family: 'Outfit', sans-serif;
     display: inline-block;
     overflow: hidden;
-    /* For the slide effect */
 }
 
-/* Unique Hover: Converging Lines */
+/* Converging Lines — top slides from left, bottom from right */
 .nv_wrapper ul li a::before,
 .nv_wrapper ul li a::after {
     content: '';
@@ -123,14 +116,12 @@
     transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Top Line - Slides from Left */
 .nv_wrapper ul li a::before {
     top: 0;
     left: 0;
     transform: translateX(-101%);
 }
 
-/* Bottom Line - Slides from Right */
 .nv_wrapper ul li a::after {
     bottom: 0;
     right: 0;
@@ -145,12 +136,10 @@
 .nv_wrapper ul li a:hover {
     color: rgb(var(--color-primary));
     letter-spacing: 2px;
-    /* Subtle expansion */
     background: rgba(var(--color-primary), 0.05);
-    /* Very faint tint */
 }
 
-/* Responsive Font Sizes */
+/* ---- Responsive ---- */
 @media (max-width: 768px) {
     .nv_menu-btn {
         font-size: 18px;
